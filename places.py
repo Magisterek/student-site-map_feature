@@ -13,6 +13,14 @@ for opcja in miasta:
     miasto = str(re.findall(r'^category_name(/*)"$', str(opcja)))
     miasto_kod.update({kod:miasto})
 print(miasto_kod)
+
+# ogarnąc tego regexa 
+
+
+
+
+
+
     # miasto_kod.update({"kod[0]":""})
 # print(miasto_kod)
 # kod_miasto = {"Poznań" :"403417"}
