@@ -1,0 +1,35 @@
+1)
+    Pierwsza pętla: 
+    <re.Match object; span=(43, 49), match='403467'>
+    <re.Match object; span=(43, 49), match='403402'>
+    <re.Match object; span=(43, 49), match='403472'>
+    <re.Match object; span=(43, 49), match='403477'>
+    <re.Match object; span=(43, 49), match='403432'>
+    <re.Match object; span=(43, 49), match='403457'>
+    <re.Match object; span=(43, 49), match='403427'>
+    <re.Match object; span=(43, 49), match='403462'>
+    <re.Match object; span=(43, 49), match='403417'>
+    <re.Match object; span=(43, 49), match='403452'>
+    <re.Match object; span=(43, 49), match='403447'>
+    <re.Match object; span=(43, 49), match='403437'>
+    <re.Match object; span=(43, 49), match='403442'>
+    <re.Match object; span=(43, 49), match='403412'>
+    <re.Match object; span=(43, 49), match='403422'>
+
+    Drugie przejście: 
+    <re.Match object; span=(43, 49), match='403467'>
+    <re.Match object; span=(43, 49), match='403402'>
+    <re.Match object; span=(43, 49), match='403472'>
+    <re.Match object; span=(43, 49), match='403477'>
+    <re.Match object; span=(43, 49), match='403432'>
+    <re.Match object; span=(43, 49), match='403457'>
+    <re.Match object; span=(43, 49), match='403427'>
+    <re.Match object; span=(43, 49), match='403462'>
+    <re.Match object; span=(43, 49), match='403417'>
+    <re.Match object; span=(43, 49), match='403452'>
+    <re.Match object; span=(43, 49), match='403447'>
+    <re.Match object; span=(43, 49), match='403437'>
+    <re.Match object; span=(43, 49), match='403442'>
+    <re.Match object; span=(43, 49), match='403412'>
+    <re.Match object; span=(43, 49), match='403422'>
+2) 
