@@ -32,6 +32,8 @@ for opcja in miasta:
 # miasto_kod = {"Poznań" :"403417"}
 kategoria_jedzenie = [
     "frytki",
+    "frytek",
+    "gołe",
     "lemoniada",
     "kawa",
     "kawy",
@@ -77,8 +79,8 @@ appended_alkohol = []
 appended_uslugi = []
 appended_kurier = []
 
-header = "miejsce, kupon"
-print(header)
+wszystkie_kategorie = ["appended_jedzenie","appended_alkohol","appended_uslugi","appended_kurier"] 
+
 for miasto, kod in miasto_kod.items():
     url = f"https://estarter.pl/pl/offer/index/id_category/{kod}/category_name/{miasto}"
     strona = get(url)
@@ -115,8 +117,29 @@ for miasto, kod in miasto_kod.items():
         # print(rabat)
         # print(miejsce[x].get_text().replace(",", ""), end=",")
         # print(kupon[x].get_text().capitalize())
-print(appended_jedzenie)
-print("######################################################################")
-print(appended_alkohol)
-print("######################################################################")
-print(appended_uslugi)
+# print(appended_jedzenie)
+# print("######################################################################")
+# print(appended_alkohol)
+# print("######################################################################")
+# print(appended_uslugi)
+header = "miejsce, kupon\n"
+with open('alohol.csv', 'w', encoding="utf-8") as f:
+    f.write(header)
+    for miejsce_kupon in appended_alkohol:
+        for k,v in miejsce_kupon.items():
+            f.write(f"{k},{v}\n")
+with open('jedzenie.csv', 'w', encoding="utf-8") as f:
+    f.write(header)
+    for miejsce_kupon in appended_jedzenie:
+        for k,v in miejsce_kupon.items():
+            f.write(f"{k},{v}\n")
+with open('uslugi.csv', 'w', encoding="utf-8") as f:
+    f.write(header)
+    for miejsce_kupon in appended_uslugi:
+        for k,v in miejsce_kupon.items():
+            f.write(f"{k},{v}\n")
+
+# for kategoria in wszystkie_kategorie:
+# for miejsce_kupon in appended_alkohol:
+#     for k,v in miejsce_kupon.items():
+#         print(k,v)
