@@ -61,7 +61,11 @@ kategoria_alkohol = [
 ]
 
 kategoria_dostawa_jedzenia = ["glovo", "uber"]
-tablica_slownikow=[]
+tablica_slownikow = []
+
+
+appended_jedzenie = []
+
 header = "miejsce, kupon"
 print(header)
 for miasto, kod in miasto_kod.items():
@@ -73,8 +77,24 @@ for miasto, kod in miasto_kod.items():
     for x in range(len(miejsce)):
         place = miejsce[x].get_text().replace(",", "")
         rabat = kupon[x].get_text().capitalize()
+        czy_znalazlo = False
         print(place)
-        print(rabat)
+        for word in place: # word okazało sie charem
+            # print(word)
+            word = str(word)[24:]
+            print(word)
+
+            if (czy_znalazlo == False) and (word in kategoria_jedzenie):
+                czy_znalazlo = True
+                # appended_jedzenie.append({str(place): str(rabat)})
+        for word in kupon:
+            word = str(word)[24:]
+            if (czy_znalazlo == False) and (word in kategoria_jedzenie):
+                czy_znalazlo = True
+                # appended_jedzenie.append({str(place): str(rabat)})
+
+        # print(rabat)
         # print(miejsce[x].get_text().replace(",", ""), end=",")
         # print(kupon[x].get_text().capitalize())
+print(appended_jedzenie)
 print("end")
