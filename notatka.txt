@@ -1,0 +1,33 @@
+  Alkohol dodać:
+	drink
+
+  Jedzenie dodać:	herbata
+	frytek
+
+  Kontrowersyjne (gdzie dodać):	napój:		jedzenie ? Alko
+		
+  podkategorie jedzenia na:	dania,	kawa/herbata,
+	słodkie?
+	pizza (14 pozycji) 
+	kebab? (6 pozycji, możliwe ze więcej) 
+	burger (15 pozycji) 
+
+  Nowe kategorie;
+	-tattoo, spróbować ( dużo w jednym miejscu, do testu)
+	 łącznie 14 pozycji 
+	-kurierzy, dostawa - Uber/glovo łącznie 20 pozycji 
+	-apple  6 pozycji 
+	-siłownię 20 pozycji, (citifit,)
+	-kurs(y) 6 pozycji 
+
+Tech, template:
+	arg1 = skąd brać dane, typ: tablica, stworzona z kategorii ogólnych 
+	arg2 = szukane słowa, tablica lub pojedyncze słowo (kwarg)
+	arg3 = nazwa tablicy, kategorii, zestawienia szukanych , string
+	podział(arg1,**arg2, arg3 ):
+		arg3 = []		--przeszukiwanie--
+		arg3.append(wartości)
+		return arg3
+
+Bugs: 
+	1) sprawdzić wpływ przecinków w opisach kuponów na działania csv, możliwy konflikt!! 	rozwiązanie: replace ( , ) jako dash ( - )
