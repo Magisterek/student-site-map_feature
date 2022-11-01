@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 import re
 
 url = "https://estarter.pl/"
-# page = get(url)
 soup = BeautifulSoup(get(url).content, "html.parser")
 cities = soup.find_all("option")
 # print(cities) == <optionvalue="/pl/offer/index/id_category/403467/category_name/bialystok">Białystok</option>
@@ -22,7 +21,7 @@ for city_option in cities:
     if city: # and id
         city_and_id.update({city[0]: id[0]})
 
-kategoria_jedzenie = [
+food_category = [
     "frytki",
     "frytek",
     "gołe",
@@ -49,7 +48,7 @@ kategoria_jedzenie = [
     "naleśniki",
     "herbata"
 ]
-kategoria_alkohol = [
+alcohol_category = [
     "koktajl",
     "koktajle",
     "alkohol",
@@ -66,11 +65,7 @@ kategoria_alkohol = [
     "drink",
     "kamikaze"
 ]
-kategoria_kurierzy = [
-    "uber",
-    "glovo"
-]
-kategoria_dostawa_jedzenia = ["glovo", "uber", "dostawa"]
+delivery_category = ["glovo", "uber", "dostawa"]
 
 appended_jedzenie = []
 appended_alkohol = []
@@ -86,46 +81,39 @@ wszystkie_kategorie = [
 
 for city, id in city_and_id.items():
     url = f"https://estarter.pl/pl/offer/index/id_category/{id}/category_name/{city}"
-    # page = get(url)
     soup = BeautifulSoup(get(url).content, "html.parser")
-    miejsce = soup.find_all("p", class_="card-text")
-    coupon = soup.find_all("h4", class_="card-title")
-    for x in range(len(miejsce)):
-        place = miejsce[x].get_text().replace(",", "").lower()
-        rabat = coupon[x].get_text().lower()
+    place_option = soup.find_all("p", class_="card-text")
+    coupon_option = soup.find_all("h4", class_="card-title")
+    for x in range(len(place_option)):
+        place = place_option[x].get_text().replace(",", "").lower()
+        coupon = coupon_option[x].get_text().lower()
         is_already_founded = False
         coupon_title = place.split(" ")
         del coupon_title[-1]  # usuń city z konca tytułu
-        opis_oferty = rabat.split(" ")
+        offer_description = coupon.split(" ")
         if is_already_founded == False:
             for word in coupon_title:  # frytki
-                if word in kategoria_jedzenie:  # jedzenie w tytule
+                if word in food_category:  # jedzenie w tytule
                     is_already_founded = True
-                    appended_jedzenie.append({place.title(): rabat.capitalize()})
-                elif word in kategoria_alkohol:  # alkohol w tytule
+                    appended_jedzenie.append({place.title(): coupon.capitalize()})
+                elif word in alcohol_category:  # alkohol w tytule
                     is_already_founded = True
-                    appended_alkohol.append({place.title(): rabat.capitalize()})
+                    appended_alkohol.append({place.title(): coupon.capitalize()})
         if is_already_founded == False:
-            for word in opis_oferty:
-                if word in kategoria_jedzenie:  # jedzenie w opisie
+            for word in offer_description:
+                if word in food_category:  # jedzenie w opisie
                     is_already_founded = True
-                    appended_jedzenie.append({place.title(): rabat.capitalize()})
-                elif word in kategoria_alkohol:  # alohol w opisie
+                    appended_jedzenie.append({place.title(): coupon.capitalize()})
+                elif word in alcohol_category:  # alohol w opisie
                     is_already_founded = True
-                    appended_alkohol.append({place.title(): rabat.capitalize()})
+                    appended_alkohol.append({place.title(): coupon.capitalize()})
         if is_already_founded == False:  # usługi
             is_already_founded = True
-            appended_uslugi.append({place: rabat})
+            appended_uslugi.append({place: coupon})
 
-        # print(rabat)
-        # print(miejsce[x].get_text().replace(",", ""), end=",")
+        # print(coupon)
+        # print(place_option[x].get_text().replace(",", ""), end=",")
         # print(coupon[x].get_text().capitalize())
-# print(appended_jedzenie)
-# print("######################################################################")
-# print(appended_alkohol)
-# print("######################################################################")
-# print(appended_uslugi)
-
 #generuj pliki 
 header = "miejsce, kupon\n"
 with open("alohol.csv", "w", encoding="utf-8") as f:
