@@ -66,17 +66,16 @@ alcohol_category = [
     "drink",
     "kamikaze"
 ]
-delivery_category = ["glovo", "uber", "dostawa"]
 
 subcategory_food_kawa_herbata_slodkie = ["Kawiarnia","kawa","kawy","herbata","kawa/herbata","cafe","ciasto","ciastka","ciasta","pączek","pączki","czekolada","kołacz","kołacze","naleśniki","naleśnik"]
 subcategory_food_pizza = ["pizza","pizzę","pizzy"]
 subcategory_food_kebab_kebap = ["kebap","kebab"]
-subcategory_food_burger = [ "burger","burgery","burgera","burgers"]
+subcategory_food_burger = ["burger","burgery","burgera","burgers"]
 
-subcategory_uslugi_kurierzy = []
-subcategory_uslugi_kurs_y = []
-subcategory_uslugi_tattoo = []
-subcategory_uslugi_silownia= [] #citifit
+subcategory_uslugi_kurierzy = ["glovo", "uber", "dostawa"]
+subcategory_uslugi_kurs_y = ["kurs","kursy"]
+subcategory_uslugi_tattoo = ["tattoo","piercing","tatuaż"]
+subcategory_uslugi_silownia= ["citifit","siłownia"] #citifit
 
 
 appended_jedzenie = []
@@ -155,7 +154,8 @@ for city, id in city_and_id.items():
                         # subcategory_is_not_founded = False
                         app_subcategory_food_burger.append({place.title(): coupon.capitalize()})
                     #dodaj do ogólnego jak nie ma podkategorii          
-                    appended_jedzenie.append({place.title(): coupon.capitalize()})
+                    else:
+                        appended_jedzenie.append({place.title(): coupon.capitalize()})
 
                 elif word in alcohol_category:  # alohol w opisie
                     word_is_not_founded = False
@@ -179,6 +179,9 @@ for city, id in city_and_id.items():
 
 
 
+
+
+
         #     # word_is_not_founded = False | nie trzeba sprawdzać
         #     appended_uslugi.append({place: coupon})
 # podkategorie jedzenia 
@@ -191,8 +194,8 @@ for city, id in city_and_id.items():
     # subcategory_uslugi_kurs_y = []
     # subcategory_uslugi_tattoo = []
     # subcategory_uslugi_silownia= [] #citifit
-for x in range(len(appended_jedzenie)):
-    print(appended_jedzenie[x])
+# for x in range(len(appended_jedzenie)):
+#     print(appended_jedzenie[x])
 
 
         # print(coupon)
@@ -201,32 +204,71 @@ for x in range(len(appended_jedzenie)):
 #generuj pliki 
 header = "miejsce, kupon\n"
 # Podstawowe katrgorie 
-# with open("alohol.csv", "w", encoding="utf-8") as f:
-#     f.write(header)
-#     for place_coupon in appended_alkohol:
-#         for k, v in place_coupon.items():
-#             f.write(f"{k},{v}\n")
-# with open("jedzenie.csv", "w", encoding="utf-8") as f:
-#     f.write(header)
-#     for place_coupon in appended_jedzenie:
-#         for k, v in place_coupon.items():
-#             f.write(f"{k},{v}\n")
-# with open("uslugi.csv", "w", encoding="utf-8") as f:
-#     f.write(header)
-#     for place_coupon in appended_uslugi:
-#         for k, v in place_coupon.items():
-#             f.write(f"{k},{v}\n")
+with open("alkohol.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in appended_alkohol:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
+with open("jedzenie.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in appended_jedzenie:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
+with open("uslugi.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in appended_uslugi:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
 
+with open("kawa_herbata.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in app_subcategory_food_kawa_herbata_slodkie:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
 
+with open("pizza.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in app_subcategory_food_pizza:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
 
-# with open("uslugi.csv", "w", encoding="utf-8") as f:
-#     f.write(header)
-#     for place_coupon in appended_uslugi:
-#         for k, v in place_coupon.items():
-#             f.write(f"{k},{v}\n")
+with open("kebab.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in app_subcategory_food_kebab_kebap:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
 
+with open("burger.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in app_subcategory_food_burger:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
 
-# for kategoria in wszystkie_kategorie:
+with open("kurierzy.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in app_subcategory_uslugi_kurierzy:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
+
+with open("kursy.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in app_subcategory_uslugi_kurs_y:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
+
+with open("tattoo.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in app_subcategory_uslugi_tattoo:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
+
+with open("silownia.csv", "w", encoding="utf-8") as f:
+    f.write(header)
+    for place_coupon in app_subcategory_uslugi_silownia:
+        for k, v in place_coupon.items():
+            f.write(f"{k},{v}\n")
+
+# for kategoria in wszystkie_kategorie:s
 # for place_coupon in appended_alkohol:
 #     for k,v in place_coupon.items():
 #         print(k,v)
