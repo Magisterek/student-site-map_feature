@@ -46,7 +46,8 @@ food_category = [
     "kołacz",
     "pączek",
     "naleśniki",
-    "herbata"
+    "herbata",
+    "kawa/herbata"
 ]
 alcohol_category = [
     "koktajl",
@@ -67,10 +68,26 @@ alcohol_category = [
 ]
 delivery_category = ["glovo", "uber", "dostawa"]
 
+subcategory_food_kawa_herbata_slodkie = ["Kawiarnia","kawa","kawy","herbata","kawa/herbata","cafe","ciasto","ciastka","ciasta","pączek","pączki","czekolada","kołacz","kołacze","naleśniki","naleśnik"]
+subcategory_food_pizza = ["pizza","pizzę","pizzy"]
+subcategory_food_kebab_kebap = ["kebap","kebab"]
+subcategory_food_burger = [ "burger","burgery","burgera","burgers"]
+
+subcategory_uslugi_kurierzy = []
+subcategory_uslugi_kurs_y = []
+subcategory_uslugi_tattoo = []
+subcategory_uslugi_silownia= [] #citifit
+
+
 appended_jedzenie = []
 appended_alkohol = []
 appended_uslugi = []
 appended_kurierzy = []
+
+app_subcategory_food_kawa_herbata_slodkie = []
+app_subcategory_food_pizza = []
+app_subcategory_food_kebab_kebap = []
+app_subcategory_food_burger = []
 
 wszystkie_kategorie = [
     "appended_jedzenie",
@@ -87,50 +104,89 @@ for city, id in city_and_id.items():
     for x in range(len(place_option)):
         place = place_option[x].get_text().replace(",", "").lower()
         coupon = coupon_option[x].get_text().lower()
-        is_already_founded = False
+        word_is_not_founded = True
         coupon_title = place.split(" ")
         del coupon_title[-1]  # usuń city z konca tytułu
         offer_description = coupon.split(" ")
-        if is_already_founded == False:
+        if word_is_not_founded:
             for word in coupon_title:  # frytki
                 if word in food_category:  # jedzenie w tytule
-                    is_already_founded = True
+                    word_is_not_founded = False
                     appended_jedzenie.append({place.title(): coupon.capitalize()})
-                elif word in alcohol_category:  # alkohol w tytule
-                    is_already_founded = True
-                    appended_alkohol.append({place.title(): coupon.capitalize()})
-        if is_already_founded == False:
+                    subcategory_is_not_founded = True
+                    if word in subcategory_food_kawa_herbata_slodkie:
+                        subcategory_is_not_founded = False
+                        app_subcategory_food_kawa_herbata_slodkie.append({place.title(): coupon.capitalize()})
+
+
+
+
+                #
+
+
+
+
+
+
+
+                # elif word in alcohol_category:  # alkohol w tytule
+                #     word_is_not_founded = False
+                #     appended_alkohol.append({place.title(): coupon.capitalize()})
+        if word_is_not_founded:
             for word in offer_description:
                 if word in food_category:  # jedzenie w opisie
-                    is_already_founded = True
+                    # word_is_not_founded = False
                     appended_jedzenie.append({place.title(): coupon.capitalize()})
-                elif word in alcohol_category:  # alohol w opisie
-                    is_already_founded = True
-                    appended_alkohol.append({place.title(): coupon.capitalize()})
-        if is_already_founded == False:  # usługi
-            is_already_founded = True
-            appended_uslugi.append({place: coupon})
+        #         elif word in alcohol_category:  # alohol w opisie
+        #             word_is_not_founded = False
+        #             appended_alkohol.append({place.title(): coupon.capitalize()})
+        # if word_is_not_founded:  # usługi
+        #     # word_is_not_founded = False | nie trzeba sprawdzać
+        #     appended_uslugi.append({place: coupon})
+# podkategorie jedzenia 
+    # subcategory_food_kawa_herbata_slodkie = []
+    # subcategory_food_pizza = []
+    # subcategory_food_kebab_kebap = []
+    # subcategory_food_burger = []
+
+    # subcategory_uslugi_kurierzy = []
+    # subcategory_uslugi_kurs_y = []
+    # subcategory_uslugi_tattoo = []
+    # subcategory_uslugi_silownia= [] #citifit
+for x in range(len(appended_jedzenie)):
+    print(appended_jedzenie[x])
+
 
         # print(coupon)
         # print(place_option[x].get_text().replace(",", ""), end=",")
         # print(coupon[x].get_text().capitalize())
 #generuj pliki 
 header = "miejsce, kupon\n"
-with open("alohol.csv", "w", encoding="utf-8") as f:
-    f.write(header)
-    for place_coupon in appended_alkohol:
-        for k, v in place_coupon.items():
-            f.write(f"{k},{v}\n")
-with open("jedzenie.csv", "w", encoding="utf-8") as f:
-    f.write(header)
-    for place_coupon in appended_jedzenie:
-        for k, v in place_coupon.items():
-            f.write(f"{k},{v}\n")
-with open("uslugi.csv", "w", encoding="utf-8") as f:
-    f.write(header)
-    for place_coupon in appended_uslugi:
-        for k, v in place_coupon.items():
-            f.write(f"{k},{v}\n")
+# Podstawowe katrgorie 
+# with open("alohol.csv", "w", encoding="utf-8") as f:
+#     f.write(header)
+#     for place_coupon in appended_alkohol:
+#         for k, v in place_coupon.items():
+#             f.write(f"{k},{v}\n")
+# with open("jedzenie.csv", "w", encoding="utf-8") as f:
+#     f.write(header)
+#     for place_coupon in appended_jedzenie:
+#         for k, v in place_coupon.items():
+#             f.write(f"{k},{v}\n")
+# with open("uslugi.csv", "w", encoding="utf-8") as f:
+#     f.write(header)
+#     for place_coupon in appended_uslugi:
+#         for k, v in place_coupon.items():
+#             f.write(f"{k},{v}\n")
+
+
+
+# with open("uslugi.csv", "w", encoding="utf-8") as f:
+#     f.write(header)
+#     for place_coupon in appended_uslugi:
+#         for k, v in place_coupon.items():
+#             f.write(f"{k},{v}\n")
+
 
 # for kategoria in wszystkie_kategorie:
 # for place_coupon in appended_alkohol:

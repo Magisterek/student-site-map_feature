@@ -1,8 +1,3 @@
-  Alkohol dodać:
-	drink
-
-  Jedzenie dodać:	herbata
-	frytek
 
   Kontrowersyjne (gdzie dodać):	napój:		jedzenie ? Alko
 		
@@ -31,3 +26,5 @@ Tech, template:
 
 Bugs: 
 	1) sprawdzić wpływ przecinków w opisach kuponów na działania csv, możliwy konflikt!! 	rozwiązanie: replace ( , ) jako dash ( - )
+
+	Najpierw sprawdzac tytuł potem opis (np. kawiarnia >> kawa )
