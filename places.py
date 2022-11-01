@@ -89,6 +89,11 @@ app_subcategory_food_pizza = []
 app_subcategory_food_kebab_kebap = []
 app_subcategory_food_burger = []
 
+app_subcategory_uslugi_kurierzy = []
+app_subcategory_uslugi_kurs_y = []
+app_subcategory_uslugi_tattoo = []
+app_subcategory_uslugi_silownia= [] #citifit
+
 wszystkie_kategorie = [
     "appended_jedzenie",
     "appended_alkohol",
@@ -110,37 +115,70 @@ for city, id in city_and_id.items():
         offer_description = coupon.split(" ")
         if word_is_not_founded:
             for word in coupon_title:  # frytki
+                #JEDZENIE
                 if word in food_category:  # jedzenie w tytule
                     word_is_not_founded = False
-                    appended_jedzenie.append({place.title(): coupon.capitalize()})
-                    subcategory_is_not_founded = True
+                    # subcategory_is_not_founded = True
                     if word in subcategory_food_kawa_herbata_slodkie:
-                        subcategory_is_not_founded = False
+                        # subcategory_is_not_founded = False
                         app_subcategory_food_kawa_herbata_slodkie.append({place.title(): coupon.capitalize()})
-
-
-
-
-                #
-
-
-
-
-
-
-
-                # elif word in alcohol_category:  # alkohol w tytule
-                #     word_is_not_founded = False
-                #     appended_alkohol.append({place.title(): coupon.capitalize()})
+                    elif word in subcategory_food_pizza:  
+                        # subcategory_is_not_founded = False
+                        app_subcategory_food_pizza.append({place.title(): coupon.capitalize()})
+                    elif word in subcategory_food_kebab_kebap:  
+                        # subcategory_is_not_founded = False
+                        app_subcategory_food_kebab_kebap.append({place.title(): coupon.capitalize()})
+                    elif word in subcategory_food_burger:  
+                        # subcategory_is_not_founded = False
+                        app_subcategory_food_burger.append({place.title(): coupon.capitalize()})
+                    #dodaj do ogólnego jak nie ma podkategorii          
+                    appended_jedzenie.append({place.title(): coupon.capitalize()})
+                #ALKHOL
+                elif word in alcohol_category:  # alkohol w tytule
+                    word_is_not_founded = False
+                    appended_alkohol.append({place.title(): coupon.capitalize()})
         if word_is_not_founded:
             for word in offer_description:
-                if word in food_category:  # jedzenie w opisie
-                    # word_is_not_founded = False
+                if word in food_category:  # jedzenie w tytule
+                    word_is_not_founded = False
+                    # subcategory_is_not_founded = True
+                    if word in subcategory_food_kawa_herbata_slodkie:
+                        # subcategory_is_not_founded = False
+                        app_subcategory_food_kawa_herbata_slodkie.append({place.title(): coupon.capitalize()})
+                    elif word in subcategory_food_pizza:  
+                        # subcategory_is_not_founded = False
+                        app_subcategory_food_pizza.append({place.title(): coupon.capitalize()})
+                    elif word in subcategory_food_kebab_kebap:  
+                        # subcategory_is_not_founded = False
+                        app_subcategory_food_kebab_kebap.append({place.title(): coupon.capitalize()})
+                    elif word in subcategory_food_burger:  
+                        # subcategory_is_not_founded = False
+                        app_subcategory_food_burger.append({place.title(): coupon.capitalize()})
+                    #dodaj do ogólnego jak nie ma podkategorii          
                     appended_jedzenie.append({place.title(): coupon.capitalize()})
-        #         elif word in alcohol_category:  # alohol w opisie
-        #             word_is_not_founded = False
-        #             appended_alkohol.append({place.title(): coupon.capitalize()})
-        # if word_is_not_founded:  # usługi
+
+                elif word in alcohol_category:  # alohol w opisie
+                    word_is_not_founded = False
+                    appended_alkohol.append({place.title(): coupon.capitalize()})
+        if word_is_not_founded:  # usługi
+            if word in subcategory_uslugi_kurierzy:
+                        # subcategory_is_not_founded = False
+                        app_subcategory_uslugi_kurierzy.append({place.title(): coupon.capitalize()})
+            elif word in subcategory_uslugi_kurs_y:  
+                # subcategory_is_not_founded = False
+                app_subcategory_uslugi_kurs_y.append({place.title(): coupon.capitalize()})
+            elif word in subcategory_uslugi_tattoo:  
+                # subcategory_is_not_founded = False
+                app_subcategory_uslugi_tattoo.append({place.title(): coupon.capitalize()})
+            elif word in subcategory_uslugi_silownia:  
+                # subcategory_is_not_founded = False
+                app_subcategory_uslugi_silownia.append({place.title(): coupon.capitalize()})
+            #dodaj do ogólnego jak nie ma podkategorii          
+            else:
+                appended_uslugi.append({place.title(): coupon})
+
+
+
         #     # word_is_not_founded = False | nie trzeba sprawdzać
         #     appended_uslugi.append({place: coupon})
 # podkategorie jedzenia 
