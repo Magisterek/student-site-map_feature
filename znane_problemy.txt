@@ -1,2 +1,0 @@
-1) Na głównej stronie estarter dwa razy jest formularz do wyboru miasta --> przy webscrapingu tej strony pętla bezsensu przechodzi
-    dwa razy przez wszystkie miasta (wystarczyłoby raz)
