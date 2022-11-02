@@ -24,6 +24,7 @@ for city_option in cities:
 
 food_kawa_herbata_slodkie = {
     "kawiarnia",
+    "Coffee",
     "kawa",
     "kawy",
     "herbata",
@@ -55,7 +56,7 @@ food_burger = {"burger", "burgery", "burgera", "burgers"}
 
 services_delivery = {"glovo", "uber", "dostawa"}
 services_tattoo = {"vean", "tattoo", "piercing", "tatuaż", "tatuażu", "tatuaże"}
-services_gym = {"cityfit", "fitness"}
+services_gym = {"cityfit", "fitness", "energym"}
 
 food_category = {
     "makaron",
@@ -71,6 +72,7 @@ food_category = {
     "śniadanie",
     "thai",
     "gołe",
+    "porcja"
 }.union(food_kebab_kebap, food_burger, food_pizza, food_kawa_herbata_slodkie)
 alcohol_category = {
     "koktajl",
@@ -229,7 +231,7 @@ for city, id in city_and_id.items():
             app_services.append({place.title(): coupon.capitalize()})
 
 # generate files
-header = "place, coupon\n"
+header = "miejsce, kupon\n"
 files_names_main_category = ["food", "alcohol", "services"]
 files_names_food_subcategory = [
     "food_kawa_herbata_slodkie",
