@@ -1,8 +1,11 @@
 # Discounts for students
 
-The aim of this project is to collect all places with student discounts in Poland
-and present them on a map
+The aim of this project is to:
 
+- Collect all places offering student promotions in Poland
+- Helps to locate specific promotions
+- Allows easier access to interesting services, thanks to the division into categories
+- Allows to find points located closest to the user
 
 ## App
 
