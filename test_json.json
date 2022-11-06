@@ -1,0 +1,124 @@
+{
+   "services_category": {
+      "delivery": [
+         "glovo",
+         "uber",
+         "dostawa"
+      ],
+      "tattoo": [
+         "vean",
+         "tattoo",
+         "piercing",
+         "tatuaż",
+         "tatuażu",
+         "tatuaże"
+      ],
+      "gym": [
+         "cityfit",
+         "fitness",
+         "energym"
+      ]
+   },
+   "food_category": {
+      "general_food": [
+         "makaron",
+         "bar",
+         "posiłek",
+         "menu",
+         "frytek",
+         "lunch",
+         "frytki",
+         "posiłki",
+         "zupa",
+         "lemoniada",
+         "śniadanie",
+         "thai",
+         "gołe",
+         "porcja"
+      ],
+      "sweet": [
+         "kawiarnia",
+         "coffee",
+         "kawa",
+         "kawy",
+         "herbata",
+         "kawa/herbata",
+         "cafe",
+         "ciasto",
+         "ciastka",
+         "ciasta",
+         "ciastko",
+         "pączek",
+         "pączki",
+         "czekolada",
+         "kołacz",
+         "kołacze",
+         "naleśniki",
+         "naleśnik",
+         "żelki",
+         "kołacz",
+         "kołacza",
+         "ice",
+         "napój",
+         "tea",
+         "lody",
+         "lodów"
+      ],
+      "pizza": [
+         "pizza",
+         "pizzę",
+         "pizzy"
+      ],
+      "kebab": [
+         "kebap",
+         "kebab"
+      ],
+      "burger": [
+         "burger",
+         "burgery",
+         "burgera",
+         "burgers"
+      ]
+   },
+   "alcohol_category": {
+      "general_alcohol": [
+         "koktajl",
+         "koktajle",
+         "alkohol",
+         "piwo",
+         "piwa",
+         "karafka",
+         "shot",
+         "shotów",
+         "shoty",
+         "wódka",
+         "wódki",
+         "kieliszek",
+         "prosecco",
+         "bacardi",
+         "drink",
+         "kamikaze",
+         "pub",
+         "wina",
+         "wino"
+      ]
+   },
+   "all_app": {
+      "main": {
+         "app_food": [],
+         "app_alcohol": [],
+         "app_services": []
+      },
+      "food": {
+         "app_food_sweet": [],
+         "app_food_pizza": [],
+         "app_food_kebab": [],
+         "app_food_burger": []
+      },
+      "services": {
+         "app_services_delivery": [],
+         "app_services_tattoo": [],
+         "app_services_gym": []
+      }
+   }
+}
