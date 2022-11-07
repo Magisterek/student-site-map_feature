@@ -1,0 +1,147 @@
+{
+   "categories": {
+      "food": {
+         "general_food": [
+            "makaron",
+            "bar",
+            "posiłek",
+            "menu",
+            "frytek",
+            "lunch",
+            "frytki",
+            "posiłki",
+            "zupa",
+            "lemoniada",
+            "śniadanie",
+            "thai",
+            "gołe",
+            "porcja"
+         ],
+         "sweet": [
+            "kawiarnia",
+            "coffee",
+            "kawa",
+            "kawy",
+            "herbata",
+            "kawa/herbata",
+            "cafe",
+            "ciasto",
+            "ciastka",
+            "ciasta",
+            "ciastko",
+            "pączek",
+            "pączki",
+            "czekolada",
+            "kołacz",
+            "kołacze",
+            "naleśniki",
+            "naleśnik",
+            "żelki",
+            "kołacz",
+            "kołacza",
+            "ice",
+            "napój",
+            "tea",
+            "lody",
+            "lodów"
+         ],
+         "pizza": [
+            "pizza",
+            "pizzę",
+            "pizzy"
+         ],
+         "kebab": [
+            "kebap",
+            "kebab"
+         ],
+         "burger": [
+            "burger",
+            "burgery",
+            "burgera",
+            "burgers"
+         ]
+      },
+      "services": {
+         "delivery": [
+            "glovo",
+            "uber",
+            "dostawa"
+         ],
+         "tattoo": [
+            "vean",
+            "tattoo",
+            "piercing",
+            "tatuaż",
+            "tatuażu",
+            "tatuaże"
+         ],
+         "gym": [
+            "cityfit",
+            "fitness",
+            "energym"
+         ]
+      },
+      "alcohol": {
+         "alcohol": [
+            "koktajl",
+            "koktajle",
+            "alkohol",
+            "piwo",
+            "piwa",
+            "karafka",
+            "shot",
+            "shotów",
+            "shoty",
+            "wódka",
+            "wódki",
+            "kieliszek",
+            "prosecco",
+            "bacardi",
+            "drink",
+            "kamikaze",
+            "pub",
+            "wina",
+            "wino",
+            "jegerbomby"
+         ]
+      }
+   },
+   "table": {
+      "to_append":{
+         "food": {
+            "general_food":[],
+            "sweet": [],
+            "pizza": [],
+            "kebab": [],
+            "burger": []
+         },
+         "services": {
+            "delivery": [],
+            "tattoo": [],
+            "gym": [],
+            "others":[]
+         },
+         "alcohol": {
+            "alcohol":[]
+         }
+      },
+      "with_file_name": {
+         "food": {
+            "general_food":"general_food",
+            "sweet": "sweet",
+            "pizza": "pizza",
+            "kebab": "kebab",
+            "burger": "burger"
+         },
+         "services": {
+            "delivery": "delivery",
+            "tattoo": "tattoo",
+            "gym": "gym",
+            "others":"others"
+         },
+         "alcohol": {
+            "alcohol":"alcohol"
+         }
+      }
+      }
+}
